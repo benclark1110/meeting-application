@@ -1,12 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Button } from 'reactstrap';
+import { Container } from 'reactstrap';
+import Header from './components/header';
+import MeetingInput from './components/add-meeting';
+import Participant from './components/add-participant';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <Button color="primary">test!</Button>
+      <Header></Header>
+      <Container>
+        <MeetingInput></MeetingInput>
+        <Participant></Participant>
+      </Container>
     </div>
   );
 }
