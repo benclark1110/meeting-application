@@ -9,8 +9,8 @@ const Header = (props: any) => {
   return (
     <div>
       <Navbar>
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarText>Simple Text</NavbarText>
+        <NavbarBrand href="/">Meeting Application</NavbarBrand>
+        <NavbarText>Add your case meetings</NavbarText>
       </Navbar>
     </div>
   );

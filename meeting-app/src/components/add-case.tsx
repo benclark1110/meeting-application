@@ -38,7 +38,7 @@ export const Case: React.FC = (props: any) => {
                     <Input 
                         id="caseName"
                         name="caseName"
-                        placeholder="with a placeholder" 
+                        placeholder="Enter case name" 
                         type="text"
                         onChange={(e:any) => setCases({ ...cases, name: e.target.value })}
                     />
@@ -50,7 +50,7 @@ export const Case: React.FC = (props: any) => {
                     <Input 
                         id="caseDescription"
                         name="caseDescription"
-                        placeholder="with a placeholder" 
+                        placeholder="Enter case description" 
                         type="textarea"
                         onChange={(e:any) => setCases({ ...cases, description: e.target.value })}
                     />

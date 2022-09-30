@@ -17,7 +17,7 @@ export const Participant: React.FC = (props: any) => {
                 <Input 
                     id="firstName"
                     name="firstName"
-                    placeholder="with a placeholder" 
+                    placeholder="Enter participant first name" 
                     type="text"
                 />
             </FormGroup>
@@ -28,7 +28,7 @@ export const Participant: React.FC = (props: any) => {
                 <Input 
                     id="lastName"
                     name="lastName"
-                    placeholder="with a placeholder" 
+                    placeholder="Enter participant last name" 
                     type="text"
                 />
             </FormGroup>
@@ -39,7 +39,7 @@ export const Participant: React.FC = (props: any) => {
                 <Input 
                     id="participantEmail" 
                     name="participantEmail" 
-                    placeholder="with a placeholder" 
+                    placeholder="Enter participant email" 
                     type="email"
                 />
             </FormGroup>
