@@ -9,7 +9,7 @@ const Participant = (props: any) => {
 
   return (
     <div>
-        <Form>
+        <Form  style={{border:"solid"}}>
             <FormGroup>
                 <Label for="firstName">
                 First Name

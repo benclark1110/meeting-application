@@ -9,7 +9,7 @@ const MeetingInput = (props: any) => {
 
   return (
     <div>
-        <Form>
+        <Form style={{border:"solid"}}>
             <FormGroup>
                 <Label for="meetingType">
                 Select a meeting type:
