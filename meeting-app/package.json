@@ -10,6 +10,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "express": "^4.18.1",
     "pg": "^8.8.0",
@@ -25,8 +26,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-seed-db": "psql -U postgres < ./db/seed.sql",
-    "api-only": "node ./db/index.js"
+    "create-seed-db": "psql -U postgres < ./src/db/seed.sql",
+    "api-only": "node ./db/index.js",
+    "run-all": "react-scripts start & node ./src/db/index.js"
   },
   "eslintConfig": {
     "extends": [
