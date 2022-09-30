@@ -5,7 +5,7 @@ import {
     Input
   } from 'reactstrap';
 
-const Participant = (props: any) => {
+export const Participant: React.FC = (props: any) => {
 
   return (
     <div>

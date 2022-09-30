@@ -27,7 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-seed-db": "psql -U postgres < ./src/db/seed.sql",
-    "api-only": "node ./db/index.js",
+    "api-only": "node ./src/db/index.js",
     "run-all": "react-scripts start & node ./src/db/index.js"
   },
   "eslintConfig": {

@@ -5,7 +5,7 @@ import {
     Input
   } from 'reactstrap';
 
-const MeetingInput = (props: any) => {
+export const Meeting: React.FC = (props: any) => {
 
   return (
     <div>
@@ -84,4 +84,4 @@ const MeetingInput = (props: any) => {
   );
 }
 
-export default MeetingInput;
+export default Meeting;

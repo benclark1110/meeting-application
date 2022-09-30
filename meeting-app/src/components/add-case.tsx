@@ -1,21 +1,36 @@
+import React, { useState } from 'react';
 import {
     Form,
     FormGroup,
     Label,
-    Input
+    Input,
+    Button
   } from 'reactstrap';
-import API from "../../src/db/API"
 import axios from "axios";
-
+import { IMeeting } from '../interfaces/meeting.types';
 
 export const Case: React.FC = (props: any) => {
-    const getIntakeData = () => {
-        return axios.get("http://localhost:3001");
+    const [cases, setCases] = useState('' as IMeeting);
+
+    const addCase = () => {
+        return axios.post("http://localhost:3001/cases", cases);
     }
+
+    const handleSubmit = (event: any) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        else {
+            addCase();
+        }
+    };
 
     return (
         <div>
-            <Form style={{border:"solid"}}>
+            <Form style={{border:"solid"}} onSubmit={handleSubmit}>
                 <FormGroup>
                     <Label for="caseName">
                     Case Name
@@ -25,6 +40,7 @@ export const Case: React.FC = (props: any) => {
                         name="caseName"
                         placeholder="with a placeholder" 
                         type="text"
+                        onChange={(e:any) => setCases({ ...cases, name: e.target.value })}
                     />
                 </FormGroup>
                 <FormGroup>
@@ -36,8 +52,10 @@ export const Case: React.FC = (props: any) => {
                         name="caseDescription"
                         placeholder="with a placeholder" 
                         type="textarea"
+                        onChange={(e:any) => setCases({ ...cases, description: e.target.value })}
                     />
                 </FormGroup>
+                <Button  type="submit" style={{backgroundColor: "#F37660", border:"none"}}>Add Case</Button>
             </Form>
         </div>
     );

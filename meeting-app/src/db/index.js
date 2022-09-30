@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3001
 
-const pokemon_model = require('./API')
+const meeting_model = require('./API')
 
 app.use(express.json())
 app.use(function (req, res, next) {
@@ -13,7 +13,17 @@ app.use(function (req, res, next) {
 });
 
 app.get('/', (req, res) => {
-  pokemon_model.getCases()
+  meeting_model.getCases()
+  .then(response => {
+    res.status(200).send(response);
+  })
+  .catch(error => {
+    res.status(500).send(error);
+  })
+})
+
+app.post('/cases', (req, res) => {
+  meeting_model.createCase(req.body)
   .then(response => {
     res.status(200).send(response);
   })

@@ -20,6 +20,19 @@ const getCases = () => {
   }) 
 }
 
+const createCase = (body) => {
+  return new Promise(function(resolve, reject) {
+    const { name, description } = body
+    pool.query('INSERT INTO cases (name, description) VALUES ($1, $2) RETURNING *', [name, description], (error, results) => {
+      if (error) {
+        reject(error)
+      }
+      resolve(`Case successfully created`)
+    })
+  })
+}
+
 module.exports = {
-  getCases
+  getCases,
+  createCase
 }
